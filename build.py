@@ -1,146 +1,82 @@
 from pybtex.database.input import bibtex
 
+def emoji_icon(emoji, size):
+    return f"""<span style="font-size:{size}; vertical-align:middle;" aria-hidden="true">&#x{emoji};</span>"""
+
 def get_personal_data():
-    name = ["Michael", "Niemeyer"]
-    email = "micniemeyer1@gmail.com"
-    twitter = "Mi_Niemeyer"
-    github = "m-niemeyer"
-    linkedin = "michael-niemeyer"
+    name = ["Daniel", "Brubaker"]
+    email = "dwb60 [at] georgetown [dot] edu"
+    github = "Whilsun"
+    linkedin = "Daniel-Brubaker"
+
     bio_text = f"""
                 <p>
-                    I am a senior research scientist at Google working on 3D computer vision and generative modeling.
-                    Prior to joining Google, I was a PhD student at the <a href="https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/home/" target="_blank">Max Planck Insitute for Intelligent Systems</a> supervised by <a href="https://www.cvlibs.net/" target="_blank">Andreas Geiger</a>.
-                    As an undergraduate student, I studied Mathematics at the <a href="http://www.mi.uni-koeln.de/main/index.en.php" target="_blank">University of Cologne (Germany)</a> and computer science as the Master's at the 
-                    <a href="https://www.st-andrews.ac.uk/computer-science/" target="_blank">University of St Andrews (UK)</a>.
+                    Howdy! I am a computational linguist interested in discourse and semantics. 
+                    My work focuses on using LMs to better understand about how people use language.
+                    
                 </p>
-                <p>For any inquiries, feel free to reach out to me via mail!</p>
+                
                 <p>
-                    <a href="https://m-niemeyer.github.io/assets/other/bio.txt" target="_blank" style="margin-right: 5px"><i class="fa-solid fa-graduation-cap"></i> Bio</a>
-                    <a href="https://m-niemeyer.github.io/assets/pdf/CV_Niemeyer_Michael.pdf" target="_blank" style="margin-right: 5px"><i class="fa fa-address-card fa-lg"></i> CV</a>
-                    <a href="mailto:micniemeyer1@gmail.com" style="margin-right: 5px"><i class="far fa-envelope-open fa-lg"></i> Mail</a>
-                    <a href="https://twitter.com/Mi_Niemeyer" target="_blank" style="margin-right: 5px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
+                    I am currently a PhD student at Georgetown University, advised by <a href="https://gucorpling.org/amir/">Amir Zeldes</a>. 
+                    Prior to that, I earned my BA and BS in Linguistics and Computer Science respectively from UT Austin, where I worked with <a href="https://jessyli.com/">Jessy Li</a> and <a href="https://kanishka.website/">Kanishka Misra</a>.
+                </p>
+
+                <p>
+                    When I'm not thinking about lanugage, I like to play the electric bass, go out into nature, and read books. My favorite national parks are Death Valley and Joshua Tree, and my favorite book is Frankenstein by Mary Shelley. I'm also a big fan of Emoji 🌃
+                </p>
+
+                <p>
+                    <a href="mailto:dwb60@georgetown.edu" style="margin-right: 5px;"> {emoji_icon("1F4E7", "1.3em")} <span style="vertical-align: middle;"><b>Mail</b></span></a>
+                    <a href="https://dwbrubaker.github.io/assets/pdf/Daniel_Brubaker_Resume.pdf" target="_blank" style="margin-right: 5px">{emoji_icon("1F4C4", "1.3em")} <span style="vertical-align: middle;"><b>Resumé</b></span></a>
+                    <a href="https://github.com/whilsun" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg" style="vertical-align: middle;"></i> <span style="vertical-align: middle;"><b>Github</b></span></a>
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#trivia" data-toggle="collapse" style="margin-left: -15px; margin-top: -2px;">{emoji_icon("1F996","1.3em")}<b>Trivia</b></button>
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#links" data-toggle="collapse" style="margin-left: -25px; margin-top: -2px;">{emoji_icon("1F517","1.3em")}<b>Links</b></button>
+                    
+                    
+                    <div id="trivia" class="collapse" style="background: #cee0fd">
+                    <span style="font-weight: bold;"></span>
+                    Under Construction!🏗️
+                    <!--The infinity emoji ♾️'s official name is U+267E PERMANENT PAPER SIGN, denoting acid-free paper. Without the variation selector that presents it as an emoji, it looks like this: ♾ -->
+                    </div>
+
+                    <div id="links" class="collapse" style="background: #ead4f7">
+                    <span style="font-weight: bold;"></span>
+                    Under Construction!🏗️
+                    </div>
+
+                    <!--
+                    <a href="https://m-Brubaker.github.io/assets/other/bio.txt" target="_blank" style="margin-right: 5px"><i class="fa-solid fa-graduation-cap"></i> Bio</a>
+                    <a href="mailto:micBrubaker1@gmail.com" style="margin-right: 5px"><i class="far fa-envelope-open fa-lg"></i> Mail</a>
+                    <a href="https://twitter.com/Mi_Brubaker" target="_blank" style="margin-right: 5px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
                     <a href="https://scholar.google.com/citations?user=v1O7i_0AAAAJ&hl=en" target="_blank" style="margin-right: 5px"><i class="fa-solid fa-book"></i> Scholar</a>
-                    <a href="https://github.com/m-niemeyer" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg"></i> Github</a>
-                    <a href="https://www.linkedin.com/in/michael-niemeyer" target="_blank" style="margin-right: 5px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#demo" data-toggle="collapse" style="margin-left: -6px; margin-top: -2px;"><i class="fa-solid fa-trophy"></i>Awards</button>
-                    <div id="demo" class="collapse">
-                    <span style="font-weight: bold;">Awards:</span>
-                    In 2011, I graduated as top of my year from secondary school and received <a href="https://www.e-fellows.net/" target="_blank">the e-fellows scholarship</a> and was admitted to <a href="https://www.mathematik.de/" target="_blank">the Germany Mathematics Society</a> and <a href="https://www.dpg-physik.de/" target="_blank">the German Physics Society</a>. In 2017 I received the Dean's List Award for Academic Excellence for my Master's degree.
-                    During my PhD studies, I was a scholar of <a href="https://imprs.is.mpg.de/" target="_blank">the International Max Planck Research School for Intelligent Systems (IMPRS-IS)</a>.
-                    Our research projects Occupancy Networks, DVR, and ConvOnet were selected to be among the 15 most influencial <a href="https://www.paperdigest.org/2021/03/most-influential-cvpr-papers-2021-03/" target="_blank">CVPR</a> /  <a href="https://www.paperdigest.org/2023/09/most-influential-eccv-papers-2023-09/" target="_blank">ECCV</a> papers of 2019 and 2020.
-                    In 2021, we received the CS teaching award for our <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/lectures/computer-vision/" target="_blank">computer vision lecture</a> as well as  <a href="https://cyber-valley.de/en/news/meet-the-ai-gamedev-winners" target="blank">the AIGameDev scientific award</a> for our GRAF project and <a href="https://cvpr2021.thecvf.com/node/329" target="_blank">the CVPR Best Paper Award</a> for GIRAFFE (<a href="https://cyber-valley.de/en/news/best-paper-cvpr-2021" target="_blank">news coverage</a>).
-                </div>
+                    <a href="https://www.linkedin.com/in/Daniel-Brubaker" target="_blank" style="margin-right: 5px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
+                    -->
                 </p>
     """
     footer = """
-            <div class="col-sm-12" style="">
-                <h4>Homepage Template</h4>
-                <p>
-                    Feel free to use this website as a template! It is fully responsive and very easy to use and maintain as it uses a python script that crawls your bib files to automatically add the papers and talks. If you find it helpful, please add a link to my website - I will also add a link to yours (if you want). <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank">Checkout the github repository for instructions on how to use it</a>. <br>
-                    <a href="https://kashyap7x.github.io/" target="_blank">&#9883;</a>
-                    <a href="https://kait0.github.io/" target="_blank">&#9883;</a>
-                </p>
+            <div class="col-sm-12">
+                <h3></h3>
+                <div style="font-style: italic; color: #555555;">
+                    <p>
+                        Based on a template by <a href="https://github.com/m-niemeyer/m-niemeyer.github.io">Michael Niemeyer</a>.
+                    </p>
+                    <p style="margin-top:-15px"> 
+                        All content is human-generated. 
+                    </p>
+                </div>
             </div>
     """
     return name, bio_text, footer
 
-def get_author_dict():
-    return {
-        'Andreas Geiger': 'https://www.cvlibs.net/',
-        'Songyou Peng': 'https://pengsongyou.github.io/',
-        'Zehao Yu': 'https://niujinshuchong.github.io/',
-        'Torsten Sattler': 'https://tsattler.github.io/',
-        'Katja Schwarz': 'https://katjaschwarz.github.io/',
-        'Axel Sauer': 'https://axelsauer.com/',
-        'Jonathan Barron': 'https://jonbarron.info/',
-        'Ben Mildenhall': 'https://bmild.github.io/',
-        'Mehdi Sajjadi': 'https://msajjadi.com/',
-        'Noha Radwan': 'http://www2.informatik.uni-freiburg.de/~radwann/',
-        'Chiyu Jiang': 'https://www.maxjiang.ml/',
-        'Yiyi Liao': 'https://yiyiliao.github.io/',
-        'Marc Pollefeys': 'https://people.inf.ethz.ch/pomarc/',
-        'Michael Oechsle': 'https://moechsle.github.io/',
-        'Christian Reiser': 'https://creiser.github.io/',
-        'Lars Mescheder': 'https://scholar.google.de/citations?user=h2k1gL4AAAAJ&hl=de',
-        'Thilo Strauss': 'https://scholar.google.com/citations?user=VlymtLQAAAAJ&hl=en',
-        'Sebastian Nowozin': 'http://www.nowozin.net/sebastian/',
-        'Marie-Julie Rakotosaona': 'http://www.lix.polytechnique.fr/Labo/Marie-Julie.RAKOTOSAONA/',
-        'Fabian Manhardt': 'https://campar.in.tum.de/Main/FabianManhardt',
-        'Diego Martin Arroyo': 'https://martinarroyo.net/',
-        'Abhijit Kundu': 'https://abhijitkundu.info/',
-        'Federico Tombari': 'https://www.cs.cit.tum.de/camp/members/senior-research-scientists/federico-tombari/',
-        'Anpei Chen': 'https://apchenstu.github.io/',
-        'Bozidar Antic': 'https://bozidarantic.com/',
-        'Apratim Bhattacharyya': 'https://apratimbhattacharyya18.github.io/',
-        'Siyu Tang': 'https://inf.ethz.ch/people/person-detail.MjYyNzgw.TGlzdC8zMDQsLTg3NDc3NjI0MQ==.html',
-        'Hidenobu Matsuki': 'https://dblp.org/pid/225/4487.html',
-        'Keisuke Tateno': 'https://campar.in.tum.de/Main/KeisukeTateno',
-        'Alessio Tonioni': 'https://alessiotonioni.github.io/',
-        'Christina Tsalicoglou': 'https://scholar.google.ch/citations?user=7D10QQkAAAAJ&hl=en', 
-        'Amit Raj': 'https://amitraj93.github.io/',
-        'Srinivas Kaza': 'https://www.linkedin.com/in/srinivas-kaza-64223b74',
-        'Ben Poole': 'https://poolio.github.io/',
-        'Nataniel Ruiz': 'https://natanielruiz.github.io/',
-        'Shiran Zada': 'https://scholar.google.com/citations?user=I2qheksAAAAJ',
-        'Kfir Aberman': 'https://kfiraberman.github.io/',
-        'Michael Rubinstein': 'http://people.csail.mit.edu/mrub/',
-        'Yuanzhen Li': 'http://people.csail.mit.edu/yzli/',
-        'Varun Jampani': 'https://varunjampani.github.io/',
-        'Francis Engelmann': 'https://francisengelmann.github.io/',
-        'Mohamad Shahbazi': 'https://mohamad-shahbazi.github.io/',
-        'Liesbeth Claessens': 'https://asl.ethz.ch/the-lab/people/person-detail.MjY5NDUz.TGlzdC8xNTg0LDEyMDExMzk5Mjg=.html',
-        'Edo Collins': 'https://www.linkedin.com/in/edo-collins/?originalSubdomain=ch',
-        'Luc Van Gool': 'https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html',
-        'Fangjinhua Wang': 'https://fangjinhuawang.github.io/',
-        'Richard Szeliski': 'https://szeliski.org/',
-        'Kunyi Li': 'https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/pl/ui/$ctx/visitenkarte.show_vcard?$ctx=design=ca2;header=max;lang=de&pPersonenGruppe=3&pPersonenId=6EC78DAA25310FF2',
-        'Nassir Navab': 'https://www.professoren.tum.de/en/navab-nassir',
-        'Rama Gosula': 'https://arvr.google.com/',
-        'John Bates': 'https://arvr.google.com/',
-        'Dominik Kaeser': 'https://scholar.google.com/citations?user=DQ4838YAAAAJ&hl=en',
-        'Erik Sandström': 'https://scholar.google.com/citations?user=phiETm4AAAAJ&hl=en',
-        'Luc Van-Gool': 'https://insait.ai/prof-luc-van-gool/',
-        'Martin Oswald': 'https://oswaldm.github.io/',
-        'Fangneng Zhan': 'https://fnzhan.com/',
-        'Hanxue Liang': 'https://scholar.google.com/citations?user=XcxDA14AAAAJ&hl=en',
-        'Yifan Wang': 'https://yifita.netlify.app/',
-        'Adam Kortylewski': 'https://genintel.mpi-inf.mpg.de/',
-        'Cengiz Oztireli': 'https://www.cl.cam.ac.uk/~aco41/',
-        'Gordon Wetzstein': 'https://stanford.edu/~gordonwz/', 
-        'Christian Theobalt': 'https://people.mpi-inf.mpg.de/~theobalt/',
-        'Siyun Liang': 'https://siyun-liang.github.io/',
-        'Thomas Wimmer': 'https://wimmerth.github.io/',
-        'Sen Wang': 'https://scholar.google.com/citations?user=OxZ9S6oAAAAJ&hl=en',
-        'Stefano Gasperini': 'https://www.cs.cit.tum.de/camp/members/stefano-gasperini/',
-        'Zeyu Chen': 'https://zeyuuuchen.github.io/',
-        'Jonas Kulhanek': 'https://jkulhanek.com/',
-        'Yiming Wang': 'https://scholar.google.com/citations?user=AVOZmU8AAAAJ&hl=en',
-        'Lucy Chai': 'https://scholar.google.com/citations?user=bunnQWQAAAAJ&hl=en',
-        'Xuan Luo': 'https://roxanneluo.github.io/',
-        'Manuel Lagunas': 'https://mlagunas.me/',
-        'Stephen Lombardi': 'https://stephenlombardi.github.io/',
-        'Tiancheng Sun': 'https://www.kevinkingo.com/',
-        'Tianshi Cao': 'https://scholar.google.com/citations?user=CZ9wBBoAAAAJ&hl=en',
-        'Elena Alegret': 'https://es.linkedin.com/in/elena-alegret',
-        'Maria Parelli': 'https://mparelli.github.io/',
-        'Atakan Topaloglu': 'https://scholar.google.com/citations?user=l9mFndIAAAAJ&hl=en',
-        'Xin Kong': 'https://kxhit.github.io/',
-        'Daniel Watson': 'https://scholar.google.com/citations?user=ve9A9rMAAAAJ&hl=en',
-        'Yannick Strümpler': 'https://scholar.google.com/citations?user=6UwR6EUAAAAJ&hl=de',
-        'Ahmed Tekalp': 'https://mysite.ku.edu.tr/mtekalp/',
-        }
 
-def generate_person_html(persons, connection=", ", make_bold=True, make_bold_name='Michael Niemeyer', add_links=True):
-    links = get_author_dict() if add_links else {}
+def generate_person_html(persons, connection=", ", make_bold=True, make_bold_name='Daniel Brubaker', add_links=True):
     s = ""
     for p in persons:
         string_part_i = ""
-        for name_part_i in p.get_part('first') + p.get_part('last'): 
+        for name_part_i in p.first_names + p.middle_names + p.last_names: 
             if string_part_i != "":
                 string_part_i += " "
             string_part_i += name_part_i
-        if string_part_i in links.keys():
-            string_part_i = f'<a href="{links[string_part_i]}" target="_blank">{string_part_i}</a>'
         if make_bold and string_part_i == make_bold_name:
             string_part_i = f'<span style="font-weight: bold";>{make_bold_name}</span>'
         if p != persons[-1]:
@@ -149,35 +85,38 @@ def generate_person_html(persons, connection=", ", make_bold=True, make_bold_nam
     return s
 
 def get_paper_entry(entry_key, entry):
-    s = """<div style="margin-bottom: 3em;"> <div class="row"><div class="col-sm-3">"""
-    s += f"""<img src="{entry.fields['img']}" class="img-fluid img-thumbnail" alt="Project image">"""
-    s += """</div><div class="col-sm-9">"""
+    s = """<div style="margin-bottom: 3em;"> <div class="row"><div class="col-sm-0"></div>"""
+    # s=""
+    s += """<div class="col-sm-10">"""
+
+    link = "url" if "url" in entry.fields.keys() else "html"
+
 
     if 'award' in entry.fields.keys():
-        s += f"""<a href="{entry.fields['html']}" target="_blank">{entry.fields['title']}</a> <span style="color: red;">({entry.fields['award']})</span><br>"""
+        s += f"""<a href="{entry.fields[link]}" target="_blank">{entry.fields['title']}</a> <span style="color: red;">({entry.fields['award']})</span><br>"""
     else:
-        s += f"""<a href="{entry.fields['html']}" target="_blank">{entry.fields['title']}</a> <br>"""
+        s += f"""<a href="{entry.fields[link]}" target="_blank">{entry.fields['title']}</a> <br>"""
 
     s += f"""{generate_person_html(entry.persons['author'])} <br>"""
     s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
 
-    artefacts = {'html': 'Project Page', 'pdf': 'Paper', 'supp': 'Supplemental', 'video': 'Video', 'poster': 'Poster', 'code': 'Code'}
-    i = 0
-    for (k, v) in artefacts.items():
-        if k in entry.fields.keys():
-            if i > 0:
-                s += ' / '
-            s += f"""<a href="{entry.fields[k]}" target="_blank">{v}</a>"""
-            i += 1
-        else:
-            print(f'[{entry_key}] Warning: Field {k} missing!')
+    # artefacts = {'url': 'Paper', 'pdf': 'Paper', 'supp': 'Supplemental', 'video': 'Video', 'poster': 'Poster', 'code': 'Code'}
+    # i = 0
+    # for (k, v) in artefacts.items():
+    #     if k in entry.fields.keys():
+    #         if i > 0:
+    #             s += ' / '
+    #         s += f"""<a href="{entry.fields[k]}" target="_blank">{v}</a>"""
+    #         i += 1
+    #     else:
+    #         print(f'[{entry_key}] Warning: Field {k} missing!')
 
-    cite = "<pre><code>@InProceedings{" + f"{entry_key}, \n"
-    cite += "\tauthor = {" + f"{generate_person_html(entry.persons['author'], make_bold=False, add_links=False, connection=' and ')}" + "}, \n"
-    for entr in ['title', 'booktitle', 'year']:
-        cite += f"\t{entr} = " + "{" + f"{entry.fields[entr]}" + "}, \n"
-    cite += """}</pre></code>"""
-    s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
+    # cite = "<pre><code>@InProceedings{" + f"{entry_key}, \n"
+    # cite += "\tauthor = {" + f"{generate_person_html(entry.persons['author'], make_bold=False, add_links=False, connection=' and ')}" + "}, \n"
+    # for entr in ['title', 'booktitle', 'year']:
+    #     cite += f"\t{entr} = " + "{" + f"{entry.fields[entr]}" + "}, \n"
+    # cite += """}</pre></code>"""
+    # s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
     s += """ </div> </div> </div>"""
     return s
 
@@ -238,7 +177,32 @@ def get_index_html():
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <title>{name[0] + ' ' + name[1]}</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doppio+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doppio+One&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
+
+  <style>
+  
+    h1 {{
+    font-family: 'Doppio One', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #222;
+    }}
+
+    body {{
+        font-family: 'Sora', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #222;
+        }}
+    </style>
 </head>
 
 <body>
@@ -248,34 +212,47 @@ def get_index_html():
             <div class="col-md-10">
                 <div class="row" style="margin-top: 3em;">
                     <div class="col-sm-12" style="margin-bottom: 1em;">
-                    <h3 class="display-4" style="text-align: center;"><span style="font-weight: bold;">{name[0]}</span> {name[1]}</h3>
+                    <h1 class="display-4" style="text-align: center;"><span style="font-weight: bold;">{name[0]}</span> {name[1]} &#x1F320;</h1>
                     </div>
+
                     <br>
-                    <div class="col-md-10" style="">
+                    <div class="col-md-9 order-2 order-md-1" >
                         {bio_text}
                     </div>
-                    <div class="col-md-2" style="">
-                        <img src="assets/img/profile.jpg" class="img-thumbnail" width="280px" alt="Profile picture">
-                    </div>
+                 
+
+                <div class="col-md-3 order-1 order-md-2 mb-3 mb-md-0">
+                    <figure class="text-center m-0">
+                        <img src="assets/img/dbrubaker.jpg"
+                            alt="A profile picture of Daniel Brubaker smiling, in a hawaiian shirt and C-SPAN hat, standing in front of Healy Hall at Georgetown University."
+                            style="border: 3px solid #555; border-radius: 3px; width: 280px; max-width: 100%;">
+                        <figcaption style="font-family: 'Computer Modern Serif', serif; max-width: 280px; margin: 0.5rem auto 0;">
+                            <strong>Figure 1.</strong> Daniel Brubaker
+                        </figcaption>
+                    </figure>
+                </div>
+
                 </div>
                 <div class="row" style="margin-top: 1em;">
-                    <div class="col-sm-12" style="">
-                        <h4>Publications</h4>
+                    <div class="col-sm-12" >
+                        <h4>Publications &#x1F4DC;</h4>
                         {pub}
                     </div>
                 </div>
+                <!--
                 <div class="row" style="margin-top: 3em;">
-                    <div class="col-sm-12" style="">
+                    <div class="col-sm-12" >
                         <h4>Talks</h4>
                         {talks}
                     </div>
                 </div>
+                -->
                 <div class="row" style="margin-top: 3em; margin-bottom: 1em;">
                     {footer}
                 </div>
             </div>
             <div class="col-md-1"></div>
-        </div?
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -298,7 +275,7 @@ def get_index_html():
 
 def write_index_html(filename='index.html'):
     s = get_index_html()
-    with open(filename, 'w') as f:
+    with open(filename, 'w', encoding="utf-8") as f:
         f.write(s)
     print(f'Written index content to {filename}.')
 
