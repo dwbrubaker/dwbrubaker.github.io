@@ -27,7 +27,7 @@ def get_personal_data():
 
                 <p>
                     <a href="mailto:dwb60@georgetown.edu" style="margin-right: 5px;"> {emoji_icon("1F4E7", "1.3em")} <span style="vertical-align: middle;"><b>Mail</b></span></a>
-                    <a href="https://dwbrubaker.github.io/assets/pdf/Daniel_Brubaker_Resume.pdf" target="_blank" style="margin-right: 5px">{emoji_icon("1F4C4", "1.3em")} <span style="vertical-align: middle;"><b>Resumé</b></span></a>
+                    <a href="assets/pdf/Daniel_Brubaker_CV.pdf" target="_blank" style="margin-right: 5px">{emoji_icon("1F4C4", "1.3em")} <span style="vertical-align: middle;"><b>CV</b></span></a>
                     <a href="https://github.com/whilsun" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg" style="vertical-align: middle;"></i> <span style="vertical-align: middle;"><b>Github</b></span></a>
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#trivia" data-toggle="collapse" style="margin-left: -15px; margin-top: -2px;">{emoji_icon("1F996","1.3em")}<b>Trivia</b></button>
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#links" data-toggle="collapse" style="margin-left: -25px; margin-top: -2px;">{emoji_icon("1F517","1.3em")}<b>Links</b></button>
