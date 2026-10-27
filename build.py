@@ -56,13 +56,18 @@ def get_personal_data():
     footer = """
             <div class="col-sm-12">
                 <h3></h3>
-                <div style="font-style: italic; color: #555555;">
-                    <p>
+                <p style="margin-top:-15px"> 
+                All content is human-generated. 
+                </p>
+                <div style="font-style: italic; color: #555555; font-size: 65%">
+ 
+                    <p style="margin-top:-15px"> 
                         Based on a template by <a href="https://github.com/m-niemeyer/m-niemeyer.github.io">Michael Niemeyer</a>.
                     </p>
                     <p style="margin-top:-15px"> 
-                        All content is human-generated. 
+                        Picture of Josua Tree National Park by <a href="http://www.photography.mattfield.com/">Matthew Field</a>, edited by me.
                     </p>
+                    
                 </div>
             </div>
     """
@@ -255,6 +260,8 @@ def get_index_html():
         </div>
     </div>
 
+    <img src="assets/img/jtree_bg.png" class="img-fluid w-100" alt="Panoramic view of Joshua Tree National Park.">
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
