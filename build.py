@@ -281,7 +281,7 @@ def get_index_html():
         </div>
     </div>
 
-    <img src="assets/img/jtree_bg.png" class="image-fade img-fluid w-100" style="border-bottom: 2px solid #c2aa86;" alt="Panoramic view of Joshua Tree National Park.">
+    <img src="assets/img/jtree_bg.png" class="image-fade img-fluid w-100" alt="Panoramic view of Joshua Tree National Park.">
 
 
     <!-- Optional JavaScript -->
