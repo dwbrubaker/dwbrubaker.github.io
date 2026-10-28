@@ -192,6 +192,19 @@ def get_index_html():
   
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
+  <script>
+    if (
+        /iPhone|iPad|iPod/.test(navigator.userAgent) &&
+        /Safari/.test(navigator.userAgent) &&
+        !/CriOS|FxiOS|EdgiOS|OPiOS/.test(navigator.userAgent)
+    ) {{
+        document.querySelectorAll('.image-border img').forEach(img => {{
+        img.style.webkitMaskImage =
+            'linear-gradient(to bottom, #000 0%, #000 calc(100% - 10px), transparent 100%)';
+        }});
+    }}
+  </script>
+
   <style>
   
     h1 {{
@@ -207,6 +220,14 @@ def get_index_html():
         line-height: 1.6;
         color: #222;
         }}
+
+    @media (max-width: 767px) {{
+            .image-fade  {{
+            -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 10px), transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 10px), transparent 100%);
+        }}
+    }}
+
     </style>
 </head>
 
@@ -260,8 +281,9 @@ def get_index_html():
         </div>
     </div>
 
-    <img src="assets/img/jtree_bg.png" class="img-fluid w-100" alt="Panoramic view of Joshua Tree National Park.">
-    
+    <img src="assets/img/jtree_bg.png" class="image-fade img-fluid w-100" style="border-bottom: 2px solid #c2aa86;" alt="Panoramic view of Joshua Tree National Park.">
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
