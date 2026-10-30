@@ -65,7 +65,7 @@ def get_personal_data():
                         Based on a template by <a href="https://github.com/m-niemeyer/m-niemeyer.github.io">Michael Niemeyer</a>.
                     </p>
                     <p style="margin-top:-15px"> 
-                        Picture of Josua Tree National Park by <a href="http://www.photography.mattfield.com/">Matthew Field</a>, edited by me,and used under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0 License</a>
+                        Picture of Josua Tree National Park by <a href="http://www.photography.mattfield.com/">Matthew Field</a>, edited by me, and used under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0 License</a>
                     </p>
                     
                 </div>
@@ -221,6 +221,18 @@ def get_index_html():
         color: #222;
         }}
 
+    .img-reveal {{
+        position: sticky;
+        bottom: 0;
+
+        height: 10vh;
+        overflow: hidden;
+
+        
+        z-index: 10;
+    }}
+
+    
     @media (max-width: 767px) {{
             .image-fade  {{
             -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 10px), transparent 100%);
@@ -281,8 +293,7 @@ def get_index_html():
         </div>
     </div>
 
-    <img src="assets/img/jtree_bg.png" class="image-fade img-fluid w-100" alt="Panoramic view of Joshua Tree National Park.">
-
+    <img src="assets/img/jtree_bg.png" style="height:100%; bottom:-20vw" class="image-fade img-reveal img-fluid w-100" alt="Panoramic view of Joshua Tree National Park.">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

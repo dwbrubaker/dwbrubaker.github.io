@@ -52,6 +52,18 @@
         color: #222;
         }
 
+    .img-reveal {
+        position: sticky;
+        bottom: 0;
+
+        height: 10vh;
+        overflow: hidden;
+
+        
+        z-index: 10;
+    }
+
+    
     @media (max-width: 767px) {
             .image-fade  {
             -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 10px), transparent 100%);
@@ -172,8 +184,7 @@
         </div>
     </div>
 
-    <img src="assets/img/jtree_bg.png" class="image-fade img-fluid w-100" alt="Panoramic view of Joshua Tree National Park.">
-
+    <img src="assets/img/jtree_bg.png" style="height:100%; bottom:-20vw" class="image-fade img-reveal img-fluid w-100" alt="Panoramic view of Joshua Tree National Park.">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
